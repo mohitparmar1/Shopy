@@ -9,6 +9,7 @@ const Item = (props) => {
       <Link to={`/product/${id}`}>
         <div className="scale-100 hover:scale-95 transition delay-300 m-5 cursor-pointer">
           <img
+           onClick={window.scrollTo(0, 0)}
             src={image}
             alt=""
             className="scale-100 hover:scale-95 transition delay-300"

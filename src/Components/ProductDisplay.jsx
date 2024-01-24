@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
+import { ShopContext } from "../Context/ShopContext";
 const ProductDisplay = (props) => {
   const { product } = props.data;
+  const { AddToCart } = useContext(ShopContext);
   return (
     <div className="flex items-center  h-screen justify-center ml-10 ">
       <div className="flex justify-center items-center gap-10">
@@ -65,7 +67,10 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="flex items-center mb-2  justify-start ">
-          <button className="bg-orange-400 w-40  text-white px-4 py-2 rounded">
+          <button
+            onClick={() => AddToCart(product.id)}
+            className="bg-orange-400 w-40  text-white px-4 py-2 rounded"
+          >
             Add to Cart
           </button>
         </div>

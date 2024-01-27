@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../Context/ShopContext";
 import Cart from "../assets/cart_icon.png";
 
 const Navbar = () => {
+  const { cartItem } = useContext(ShopContext);
   return (
-    <div className="flex items-center justify-around bg-white shadow-md sticky-0">
+    <div className="flex items-center justify-around bg-white shadow-md  top-0 left-0 w-screen">
       <div className="text-orange-400 font-bold text-2xl mx-5 text-center">
         <h2 className="cursor-pointer ">
           <Link to="/">Shopy</Link>
@@ -30,8 +32,8 @@ const Navbar = () => {
         <Link to="/cart">
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer" />
         </Link>
-        <div className="absolute top-5 right-[210px] bg-orange-400 rounded-full w-4 h-4 text-xs text-white text-center pointer-events-none">
-          0
+        <div className="relative -top-2 right-[10px] bg-orange-400 rounded-full w-4 h-4 text-xs text-white text-center pointer-events-none">
+          {cartItem.length > 0 ? cartItem.length : 0}
         </div>
       </div>
     </div>

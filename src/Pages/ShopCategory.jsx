@@ -31,7 +31,7 @@ const ShopCategory = (props) => {
       <div className="flex items-center justify-between mt-4 ml-3">
         <p>
           <span className="text-black ml-4 ">
-            <bold className="font-bold ">Showing 1-{displayCount} </bold>
+            <p className="font-bold ">Showing 1-{displayCount} </p>
             out of {filteredProducts.length} results
           </span>
         </p>

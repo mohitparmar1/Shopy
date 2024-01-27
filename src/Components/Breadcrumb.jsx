@@ -3,7 +3,7 @@ import ArrowIcon from "../assets/breadcrum_arrow.png";
 
 const Breadcrumb = (props) => {
   const { product } = props.data;
-  console.log(props)
+
 
   return (
     <div className="flex  items-center text-lg mx-10 my-2">

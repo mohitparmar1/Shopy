@@ -4,7 +4,7 @@ import { ShopContext } from "../Context/ShopContext";
 import Cart from "../assets/cart_icon.png";
 
 const Navbar = () => {
-  const { cartItem } = useContext(ShopContext);
+  const { getCartQuantity } = useContext(ShopContext);
   return (
     <div className="flex items-center justify-around bg-white shadow-md  top-0 left-0 w-screen">
       <div className="text-orange-400 font-bold text-2xl mx-5 text-center">
@@ -33,7 +33,7 @@ const Navbar = () => {
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer" />
         </Link>
         <div className="relative -top-2 right-[10px] bg-orange-400 rounded-full w-4 h-4 text-xs text-white text-center pointer-events-none">
-          {cartItem.length > 0 ? cartItem.length : 0}
+          {getCartQuantity()}
         </div>
       </div>
     </div>

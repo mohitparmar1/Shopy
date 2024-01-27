@@ -4,7 +4,8 @@ import { ShopContext } from "../Context/ShopContext";
 import removeIcon from "../assets/cart_cross_icon.png";
 
 const CartItems = () => {
-  const { all_products, cartItem, RemoveFromCart } = useContext(ShopContext);
+  const { getCartTotalAmount, all_products, cartItem, RemoveFromCart } =
+    useContext(ShopContext);
   return (
     <div className="w-full h-screen my-5">
       <div className="grid grid-cols-6 gap-5 items-center ml-14">
@@ -55,7 +56,7 @@ const CartItems = () => {
           <hr className="mb-4" />
           <div className="flex justify-between mb-2">
             <h3 className="text-lg font-bold">Subtotal</h3>
-            <h3 className="text-lg font-bold">$0.00</h3>
+            <h3 className="text-lg font-bold">${getCartTotalAmount()}</h3>
           </div>
           <div className="flex justify-between mb-2">
             <h3 className="text-lg font-bold">Shipping</h3>
@@ -63,7 +64,7 @@ const CartItems = () => {
           </div>
           <div className="flex justify-between mb-4">
             <h3 className="text-lg font-bold">Total</h3>
-            <h3 className="text-lg font-bold">$0.00</h3>
+            <h3 className="text-lg font-bold">${getCartTotalAmount()}</h3>
           </div>
           <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
             Proceed to Checkout

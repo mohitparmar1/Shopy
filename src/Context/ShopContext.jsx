@@ -59,7 +59,7 @@ const ShopContextProvider = (props) => {
     AddToCart,
     RemoveFromCart,
     getCartTotalAmount,
-    getCartQuantity 
+    getCartQuantity,
   };
   return (
     <ShopContext.Provider value={contextValue}>

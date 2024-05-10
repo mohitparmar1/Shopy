@@ -20,7 +20,6 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* <img src={HeroImg} alt="image" /> */}
     </div>
   );
 };

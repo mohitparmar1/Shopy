@@ -1,8 +1,36 @@
-# React + Vite
+# Shopy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Shopy! This is a React project for an online shopping platform.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to set up the project locally on your machine:
+
+### Prerequisites
+
+- Node.js (v14.x or later)
+- npm (v6.x or later)
+
+### Clone the Repository
+
+- Fork the Repo!
+
+```bash
+git clone https://github.com/<your Username>/Shopy.git
+```
+
+```bash
+cd Shopy
+```
+
+```bash
+npm install
+```
+
+
+```bash
+npm run dev
+```
+
+Contributing
+Contributions are welcome! Feel free to submit pull requests or raise issues for any improvements or bug fixes.

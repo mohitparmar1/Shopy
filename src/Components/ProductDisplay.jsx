@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../Context/ShopContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ProductDisplay = (props) => {
   const { product } = props.data;
   const { AddToCart } = useContext(ShopContext);
@@ -52,27 +54,55 @@ const ProductDisplay = (props) => {
         <div className="flex flex-col gap-4 w-3/4  my-5">
           <h1 className="text-lg font-bold">Select Size:</h1>
           <div className="flex flex-row gap-4">
-            <button className="bg-gray-400 active:bg-gray-300 text-white px-4 py-2 rounded">
+            <button
+              className="bg-gray-400 active:bg-gray-800 text-white px-4 py-2 rounded"
+              onClick={() => {
+                product.size = "S";
+              }}
+            >
               S
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className="bg-gray-400 active:bg-gray-800 text-white px-4 py-2 rounded"
+              onClick={() => {
+                product.size = "M";
+              }}
+            >
               M
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className="bg-gray-400 active:bg-gray-800 text-white px-4 py-2 rounded"
+              onClick={() => {
+                product.size = "L";
+              }}
+            >
               L
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className="bg-gray-400 active:bg-gray-800 text-white px-4 py-2 rounded"
+              onClick={() => {
+                product.size = "XL";
+              }}
+            >
               XL
             </button>
           </div>
         </div>
         <div className="flex items-center mb-2  justify-start ">
           <button
-            onClick={() => AddToCart(product.id)}
+            onClick={() => {
+              if (product.size === "") {
+                toast.error("Please select size");
+                return;
+              }
+              AddToCart(product.id);
+              toast.success("Added to Cart");
+            }}
             className="bg-orange-400 w-40  text-white px-4 py-2 rounded"
           >
             Add to Cart
           </button>
+          <ToastContainer />
         </div>
         <div className="flex flex-col my-2">
           <p>

@@ -8,10 +8,11 @@ const CartItems = () => {
     useContext(ShopContext);
   return (
     <div className="w-full h-screen my-5">
-      <div className="grid grid-cols-6 gap-5 items-center ml-14">
+      <div className="grid grid-cols-7 gap-5 items-center ml-14">
         <p className=" font-bold">Products</p>
         <p className="font-bold">Title</p>
         <p className="font-bold">Price</p>
+        <p className="font-bold">Size</p>
         <p className="font-bold">Quantity</p>
         <p className="font-bold">Total</p>
         <p className="font-bold">Remove</p>
@@ -23,7 +24,7 @@ const CartItems = () => {
           if (cartItem[item.id] > 0) {
             return (
               <div
-                className="grid grid-cols-6 gap-5 items-center ml-14 my-10"
+                className="grid grid-cols-7 gap-5 items-center ml-14 my-10"
                 key={item.id}
               >
                 <div className="flex flex-row">
@@ -35,6 +36,7 @@ const CartItems = () => {
                 </div>
                 <p className=" max-w-[200px]">{item.name}</p>
                 <p>${item.new_price}</p>
+                <p>{item.size}</p>
                 <p className="text-lg bg-gray-300 text-center w-10 rounded-md">
                   {cartItem[item.id]}
                 </p>

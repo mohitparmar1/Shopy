@@ -12,6 +12,7 @@ import women_banner from "./assets/banner_women.png";
 import kids_banner from "./assets/banner_kids.png";
 
 import "./index.css";
+import Signup from "./Pages/Signup";
 const App = () => {
   return (
     <Router>
@@ -19,6 +20,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Shop />} />
           <Route
             path="/women"

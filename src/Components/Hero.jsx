@@ -1,10 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import HeroImg from "../assets/hero2.jpg";
+import HeroImg1 from "../assets/hero2.jpg";
+import HeroImg2 from "../assets/hero2.jpg";
+import HeroImg3 from "../assets/hero2.jpg";
+import HeroImg4 from "../assets/hero2.jpg";
+import HeroImg5 from "../assets/hero2.jpg";
+import HeroImg6 from "../assets/hero2.jpg";
 import arrow from "../assets/arrow.png";
+
 const Hero = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
+
   return (
     <div className="w-full z-10 relative">
+      <Slider {...settings}>
+        <div>
+          <img src={HeroImg} alt="image" className="w-full h-auto object-fill" />
+        </div>
+        <div>
+          <img src={HeroImg1} alt="image" className="w-full h-autoobject-fill" />
+        </div>
+        <div>
+          <img src={HeroImg2} alt="image" className="w-full h-auto object-cover" />
+        </div>
+        <div>
+          <img src={HeroImg3} alt="image" className="w-full h-auto object-cover" />
+        </div>
+        <div>
+          <img src={HeroImg4} alt="image" className="w-full h-auto object-cover" />
+        </div>
+        <div>
+          <img src={HeroImg5} alt="image" className="w-full h-auto object-cover" />
+        </div>
+        <div>
+          <img src={HeroImg6} alt="image" className="w-full h-auto object-cover" />
+        </div>
+      </Slider>
+
       <div className="flex items-center flex-col">
         <p className="text-sm md:text-base lg:text-lg font-Poppins text-center text-black pt-10 md:pt-20 absolute top-28 left-0 md:left-[250px]">
           SPRING/SUMMER COLLECTION 2021
@@ -19,8 +63,6 @@ const Hero = () => {
           <a href="/women">Shop Now</a>
         </button>
       </div>
-
-      <img src={HeroImg} alt="image" />
     </div>
   );
 };

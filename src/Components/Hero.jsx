@@ -4,12 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import HeroImg from "../assets/hero2.jpg";
-import HeroImg1 from "../assets/hero2.jpg";
-import HeroImg2 from "../assets/hero2.jpg";
-import HeroImg3 from "../assets/hero2.jpg";
-import HeroImg4 from "../assets/hero2.jpg";
-import HeroImg5 from "../assets/hero2.jpg";
-import HeroImg6 from "../assets/hero2.jpg";
+import HeroImg1 from "../assets/averie-woodard-4nulm-JUYFo-unsplash.jpg";
+import HeroImg6 from "../assets/austin-distel-7uoMmzPd2JA-unsplash.jpg";
+import HeroImg2 from "../assets/dennys-lennon-DCslPWw7Bs0-unsplash.jpg";
+import HeroImg3 from "../assets/Hero.jpg";
+import HeroImg4 from "../assets/greg-raines-rqFBIR6vQXg-unsplash.jpg";
+import HeroImg5 from "../assets/mubariz-mehdizadeh-t3zrEm88ehc-unsplash.jpg";
+
 import arrow from "../assets/arrow.png";
 
 const Hero = () => {
@@ -27,25 +28,40 @@ const Hero = () => {
     <div className="w-full z-10 relative">
       <Slider {...settings}>
         <div>
-          <img src={HeroImg} alt="image" className="w-full h-auto object-fill" />
+          <img src={HeroImg} alt="image" className="w-full object-fill" style={{
+            height : "540px"
+          }}/>
         </div>
         <div>
-          <img src={HeroImg1} alt="image" className="w-full h-autoobject-fill" />
+          <img src={HeroImg1} alt="image" className="w-full  object-cover" style={{
+            height : "540px"
+          }}/>
         </div>
         <div>
-          <img src={HeroImg2} alt="image" className="w-full h-auto object-cover" />
+          <img src={HeroImg2} alt="image" className="w-full object-cover"  style={{
+            height : "540px"
+          }}/>
         </div>
         <div>
-          <img src={HeroImg3} alt="image" className="w-full h-auto object-cover" />
+          <img src={HeroImg6} alt="image" className="w-full object-cover" style={{
+            height : "540px"
+          }}/>
         </div>
         <div>
-          <img src={HeroImg4} alt="image" className="w-full h-auto object-cover" />
+          <img src={HeroImg3} alt="image" className="w-full object-cover" style={{
+            height : "540px",
+
+          }}/>
         </div>
         <div>
-          <img src={HeroImg5} alt="image" className="w-full h-auto object-cover" />
+          <img src={HeroImg4} alt="image" className="w-full object-cover" style={{
+            height : "540px"
+          }}/>
         </div>
         <div>
-          <img src={HeroImg6} alt="image" className="w-full h-auto object-cover" />
+          <img src={HeroImg5} alt="image" className="w-full object-cover" style={{
+            height : "540px"
+          }}/>
         </div>
       </Slider>
 

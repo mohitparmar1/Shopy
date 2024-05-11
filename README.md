@@ -32,9 +32,5 @@ npm install
 npm run dev
 ```
 
-```bash
-npm install --save-dev vite
-```
-
 Contributing
 Contributions are welcome! Feel free to submit pull requests or raise issues for any improvements or bug fixes.

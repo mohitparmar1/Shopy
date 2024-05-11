@@ -38,6 +38,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Copyright Section */}
+      <div className="text-center mt-8 text-sm text-gray-500">
+        <p>&copy; {new Date().getFullYear()} Shopy. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

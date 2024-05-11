@@ -4,7 +4,7 @@ Welcome to Shopy! This is a React project for an online shopping platform.
 
 ## Setup
 
-Follow these steps to set up the project locally on your machine:
+Follow these steps to set up the project locally on your machine :
 
 ### Prerequisites
 
@@ -32,5 +32,4 @@ npm install
 npm run dev
 ```
 
-Contributing
-Contributions are welcome! Feel free to submit pull requests or raise issues for any improvements or bug fixes.
+Your contributions are welcome! Feel free to submit pull requests or raise issues for any improvements or bug fixes.

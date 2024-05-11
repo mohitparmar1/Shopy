@@ -25,6 +25,7 @@ const Hero = () => {
   };
 
   return (
+
     <div className="w-full z-10 relative">
       <Slider {...settings}>
         <div>
@@ -67,18 +68,24 @@ const Hero = () => {
 
       <div className="flex items-center flex-col">
         <p className="text-sm md:text-base lg:text-lg font-Poppins text-center text-black pt-10 md:pt-20 absolute top-28 left-0 md:left-[250px]">
+
+    <div style={{backgroundImage: `url(${HeroImg})`}} className="relative w-full h-[560px] max-[440px]:h-[400px] bg-center bg-cover bg-custom-image">
+      <div className="flex flex-col gap-5  ms-5 absolute top-[50%] lg:left-40 left-[10%] translate-y-[-50%] w-fit">
+        <p className="text-lg text-black md:text-xl font-Poppins">
+
           SPRING/SUMMER COLLECTION 2021
         </p>
-        <p className="text-2xl md:text-4xl lg:text-5xl font-Poppins text-center text-black pt-16 md:pt-32 absolute top-32 left-0 md:left-[250px]">
+        <p className="text-4xl font-bold text-black md:text-6xl font-Poppins">
           Get up to 30% Off
         </p>
-        <p className="text-2xl md:text-4xl lg:text-5xl font-Poppins text-center text-black pt-16 md:pt-32 absolute top-44 left-0 md:left-[250px]">
+        <p className="text-4xl font-bold text-black md:text-6xl font-Poppins">
           New Arrivals
         </p>
-        <button className="flex items-center font-Poppins cursor-pointer text-base md:text-lg border text-white bg-black border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200 absolute top-80 md:top-96 left-0 md:left-[250px]">
+        <button className="p-2 md:p-3 text-base text-white bg-black cursor-pointer font-Poppins md:text-lg rounded-full active:bg-slate-200 top-36 max-w-40">
           <a href="/women">Shop Now</a>
         </button>
       </div>
+
     </div>
   );
 };

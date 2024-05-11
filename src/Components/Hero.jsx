@@ -4,23 +4,22 @@ import HeroImg from "../assets/hero2.jpg";
 import arrow from "../assets/arrow.png";
 const Hero = () => {
   return (
-    <div className="w-full z-10 relative">
-      <div className="flex items-center flex-col">
-        <p className="text-sm md:text-base lg:text-lg font-Poppins text-center text-black pt-10 md:pt-20 absolute top-28 left-0 md:left-[250px]">
+    <div style={{backgroundImage: `url(${HeroImg})`}} className="relative w-full h-[560px] max-[440px]:h-[400px] bg-center bg-cover bg-custom-image">
+      <div className="flex flex-col gap-5 py-16 ms-5 lg:ps-16 lg:m-14">
+        <p className="text-sm text-black md:text-base lg:text-lg font-Poppins">
           SPRING/SUMMER COLLECTION 2021
         </p>
-        <p className="text-2xl md:text-4xl lg:text-5xl font-Poppins text-center text-black pt-16 md:pt-32 absolute top-32 left-0 md:left-[250px]">
+        <p className="text-2xl text-black md:text-4xl lg:text-5xl font-Poppins">
           Get up to 30% Off
         </p>
-        <p className="text-2xl md:text-4xl lg:text-5xl font-Poppins text-center text-black pt-16 md:pt-32 absolute top-44 left-0 md:left-[250px]">
+        <p className="text-2xl text-black md:text-4xl lg:text-5xl font-Poppins">
           New Arrivals
         </p>
-        <button className="flex items-center font-Poppins cursor-pointer text-base md:text-lg border text-white bg-black border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200 absolute top-80 md:top-96 left-0 md:left-[250px]">
+        <button className="p-1 text-base text-white bg-black border border-gray-400 cursor-pointer font-Poppins md:text-lg rounded-3xl active:bg-slate-200 top-36 max-w-40">
           <a href="/women">Shop Now</a>
         </button>
       </div>
 
-      <img src={HeroImg} alt="image" />
     </div>
   );
 };

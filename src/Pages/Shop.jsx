@@ -7,7 +7,7 @@ import NewsletterSection from "../Components/Newsletter";
 
 const Shop = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-8">
       <Hero />
       <Popular />
       <Offers />

@@ -28,13 +28,18 @@ const Footer = () => {
 
         <div className="flex items-center gap-4">
           <div className="">
-            <img src={instaIcon} />
+            <a href="https://www.instagram.com/">
+            <img src={instaIcon} /></a>
           </div>
           <div className="">
-            <img src={whatsappIcon} />
+          <a href="https://www.whatsapp.com/">
+
+            <img src={whatsappIcon} /></a>
           </div>
           <div>
-            <img src={pintesterIcon} />
+          <a href="https://in.pinterest.com/">
+
+            <img src={pintesterIcon} /></a>
           </div>
         </div>
       </div>

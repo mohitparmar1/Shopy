@@ -27,6 +27,10 @@ cd Shopy
 npm install
 ```
 
+```bash
+npm install vite
+```
+
 
 ```bash
 npm run dev

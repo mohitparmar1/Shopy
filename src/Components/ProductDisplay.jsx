@@ -14,6 +14,7 @@ const ProductDisplay = (props) => {
     setSelectedSize(size);
   };
 
+
   return (
     <div className="flex items-center h-screen justify-center ml-10">
       <div className="flex justify-center items-center gap-10">
@@ -116,7 +117,14 @@ const ProductDisplay = (props) => {
             <span className="font-bold">Category :</span> T-shirt,Shirt
           </p>
           <p>
-            <span className="font-bold">Tags :</span>Modern , latest
+            <span className="font-bold">Tags :</span>
+            <button className="bg-blue-700 text-white p-1 m-1 rounded" >
+              Modern
+            </button>
+            <button className="bg-blue-700 text-white p-1 m-1 rounded"
+            >
+              latest
+            </button>
           </p>
         </div>
       </div>

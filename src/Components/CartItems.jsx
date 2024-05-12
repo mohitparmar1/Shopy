@@ -7,7 +7,7 @@ const CartItems = () => {
   const { getCartTotalAmount, all_products, cartItem, RemoveFromCart } =
     useContext(ShopContext);
   return (
-    <div className="w-full h-screen my-5">
+    <div className="w-full h-max my-5">
       <div className="grid grid-cols-7 gap-5 items-center ml-14">
         <p className=" font-bold">Products</p>
         <p className="font-bold">Title</p>

@@ -4,8 +4,8 @@ import whatsappIcon from "../assets/whatsapp_icon.png";
 import pintesterIcon from "../assets/pintester_icon.png";
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-purple-100 to-white text-black py-10 ">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+    <footer className="bg-gradient-to-t from-purple-100 to-white text-black py-10 relative">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between absolute bottom-0">
         <div className="mb-4 md:mb-0">
           <h2 className="text-2xl font-bold text-orange-400">Shopy</h2>
           <p className="text-gray-400">Connecting people through fashion.</p>

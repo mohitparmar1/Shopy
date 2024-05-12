@@ -12,22 +12,41 @@ const Navbar = () => {
           <Link to="/">Shopy</Link>
         </h2>
       </div>
-      <div className="">
-        <ul className="flex flex-row font-Poppins">
-          <li className="relative mx-3 cursor-pointer text-lg hover:text-orange-400 hover:font-semibold">
-            <Link to="/women">Women</Link>
-          </li>
-          <li className="mx-3 cursor-pointer text-lg hover:text-orange-400 hover:font-semibold">
-            <Link to="/mens">Men</Link>
-          </li>
-          <li className="mx-3 cursor-pointer text-lg hover:text-orange-400 hover:font-semibold">
-            <Link to="/kids">Kids</Link>
-          </li>
-        </ul>
-      </div>
+      <div className="flex items-center space-x-4">
+  <a href="/" className="hover:text-orange-400">
+    Home
+  </a>
+  <div className="relative z-20">
+    <a href="#" className="hover:text-orange-400">
+      Products
+    </a>
+    <ul className="absolute hidden bg-white border rounded-md shadow-md z-10">
+      <li className="py-2 px-4 hover:text-orange-400">
+        <Link to="/women">Women</Link>
+      </li>
+      <li className="py-2 px-4 hover:text-orange-400">
+        <Link to="/mens">Men</Link>
+      </li>
+      <li className="py-2 px-4 hover:text-orange-400">
+        <Link to="/kids">Kids</Link>
+      </li>
+    </ul>
+  </div>
+  <a href="#" className="hover:text-orange-400">
+    About Us
+  </a>
+  <a href="#" className="hover:text-orange-400">
+    Contact
+  </a>
+  <style jsx>{`
+  .relative:hover .absolute {
+    display: block;
+  }
+`}</style>
+</div>
       <div className="flex items-center mx-5">
         <button className="font-Poppins cursor-pointer text-lg m-5 border text-black bg-white border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200">
-          <Link to="/login">Login</Link>
+          <Link to="/login" className="hover:text-orange-400" >Login</Link>
         </button>
         <Link to="/cart">
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer" />

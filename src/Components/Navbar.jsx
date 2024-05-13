@@ -38,15 +38,15 @@ const Navbar = () => {
   <a href="#" className="hover:text-orange-400">
     Contact
   </a>
-  <style jsx>{`
+  {/* <style jsx>{`
   .relative:hover .absolute {
     display: block;
   }
-`}</style>
+`}</style> */}
 </div>
       <div className="flex items-center mx-5">
-        <button className="font-Poppins cursor-pointer text-lg m-5 border text-black bg-white border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200">
-          <Link to="/login" className="hover:text-orange-400" >Login</Link>
+        <button className="font-Poppins cursor-pointer text-lg m-5 border text-white bg-orange-300   hover:bg-orange-400 border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200">
+          <Link to="/login" className="hover:bg-orange-400" >Login</Link>
         </button>
         <Link to="/cart">
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer" />

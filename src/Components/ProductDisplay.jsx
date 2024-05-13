@@ -16,7 +16,7 @@ const ProductDisplay = (props) => {
 
 
   return (
-    <div className="flex items-center h-screen justify-center ml-10">
+    <div className="flex items-center h-auto justify-center ml-10">
       <div className="flex justify-center items-center gap-10">
         <div className="flex flex-col gap-4 max-h-46">
           <img src={product.image} alt="" className="w-40 h-46" />
@@ -119,7 +119,7 @@ const ProductDisplay = (props) => {
           <p>
             <span className="font-bold">Tags :</span>
             <button className="bg-blue-700 text-white p-1 m-1 rounded" >
-              Modern
+              Modern  
             </button>
             <button className="bg-blue-700 text-white p-1 m-1 rounded"
             >

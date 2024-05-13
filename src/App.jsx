@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import Product from "./Pages/Product";
 import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
+import Saved from "./Pages/WishList"
 
 import "./index.css";
 import Signup from "./Pages/Signup";
@@ -27,10 +28,13 @@ const App = () => {
         <Route path="/kids" element={<ShopCategoryWithFooter banner={kids_banner} category="kid" />} />
         <Route path="/product/:productId" element={<ProductWithFooter />} />
         <Route path="/cart" element={<CartWithFooter />} />
+        <Route path="/wishlist" element={<WishlistWithFooter />} />
       </Routes>
     </Router>
   );
 };
+
+
 
 const LoginWithFooter = () => (
   <>
@@ -65,6 +69,15 @@ const ShopCategoryWithFooter = ({ banner, category }) => (
     <ShopCategory banner={banner} category={category} />
     <Footer />
   </>
+);
+
+const WishlistWithFooter=()=>(
+  
+  <>
+    <Saved />
+    <Footer />
+  </>
+  
 );
 
 export default App;

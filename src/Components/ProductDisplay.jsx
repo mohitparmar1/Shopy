@@ -2,12 +2,14 @@ import React, { useContext, useState } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../Context/ShopContext";
+import { SavedContext } from "../Context/SavedContext"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductDisplay = (props) => {
   const { product } = props.data;
   const { AddToCart } = useContext(ShopContext);
+  const  { AddToList }=useContext(SavedContext);
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleSizeClick = (size) => {
@@ -95,7 +97,7 @@ const ProductDisplay = (props) => {
             </button>
           </div>
         </div>
-        <div className="flex items-center mb-2 justify-start">
+        <div className="flex items-center mb-2 justify-start space-x-4">
           <button
             onClick={() => {
               if (selectedSize === "") {
@@ -108,6 +110,17 @@ const ProductDisplay = (props) => {
             className="bg-orange-400 w-40 text-white px-4 py-2 rounded"
           >
             Add to Cart
+          </button>
+
+          <button
+            onClick={() => {
+              
+              AddToList(product.id);
+              toast.success("Added to Wishlist");
+            }}
+            className="bg-blue-950 w-40 text-white px-4 py-2 rounded"
+          >
+            Add to Wishlist
           </button>
           <ToastContainer />
         </div>

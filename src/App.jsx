@@ -15,6 +15,7 @@ import About from "./Pages/About";
 
 import "./index.css";
 import Signup from "./Pages/Signup";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/cart" element={<CartWithFooter />} />
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
+        <Route path="*" element={<NotFound/>} />
 
       </Routes>
     </Router>

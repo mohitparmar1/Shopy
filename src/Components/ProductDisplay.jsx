@@ -100,17 +100,22 @@ const ProductDisplay = (props) => {
         <div className="flex items-center mb-2 justify-start space-x-4">
           <button
             onClick={() => {
-              if (selectedSize === "") {
-                toast.error("Please select size");
+              if (product.size === "") {
+                toast.error("Please select size", {
+                autoClose:1500,
+              });
                 return;
               }
               AddToCart(product.id);
-              toast.success("Added to Cart");
+              toast.success("Added to Cart ", {
+                autoClose:1500
+              });
             }}
             className="bg-orange-400 w-40 text-white px-4 py-2 rounded"
           >
             Add to Cart
           </button>
+
 
           <button
             onClick={() => {
@@ -122,6 +127,8 @@ const ProductDisplay = (props) => {
           >
             Add to Wishlist
           </button>
+
+
           <ToastContainer toastStyle={{backgroundColor: "lightgreen" , color: "black", fontWeight:"bold",marginTop:"28px"}}/>
         </div>
         <div className="flex flex-col my-2">

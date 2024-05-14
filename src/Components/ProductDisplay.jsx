@@ -122,7 +122,7 @@ const ProductDisplay = (props) => {
           >
             Add to Wishlist
           </button>
-          <ToastContainer />
+          <ToastContainer toastStyle={{backgroundColor: "lightgreen" , color: "black", fontWeight:"bold",marginTop:"28px"}}/>
         </div>
         <div className="flex flex-col my-2">
           <p>

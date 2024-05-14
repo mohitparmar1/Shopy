@@ -47,7 +47,7 @@ const Footer = () => {
           <a href="#" className="block p-2">Products</a>
         </button>
         <button className="hover:bg-orange-400 hover:text-white focus:outline-none">
-          <a href="#" className="block p-2">About Us</a>
+          <a href="/about" className="block p-2">About Us</a>
         </button>
         <button className="hover:bg-orange-400 hover:text-white focus:outline-none">
           <a href="#" className="block p-2">Contact</a>

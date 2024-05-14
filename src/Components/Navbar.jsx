@@ -36,7 +36,7 @@ const Navbar = () => {
       </li>
     </ul>
   </div>
-  <a href="#" className="hover:text-orange-400">
+  <a href="/about" className="hover:text-orange-400">
     About Us
   </a>
   <a href="#" className="hover:text-orange-400">

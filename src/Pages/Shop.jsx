@@ -7,7 +7,7 @@ import Popular from "../Components/Popular";
 
 const Shop = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 overflow-x-hidden">
       <Hero />
       <Popular />
       <Offers />

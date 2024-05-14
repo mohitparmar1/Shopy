@@ -12,6 +12,7 @@ import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 import Saved from "./Pages/WishList"
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 import "./index.css";
 import Signup from "./Pages/Signup";
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/cart" element={<CartWithFooter />} />
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
 
       </Routes>
     </Router>

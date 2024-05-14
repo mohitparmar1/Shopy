@@ -39,7 +39,7 @@ const Navbar = () => {
   <a href="/about" className="hover:text-orange-400">
     About Us
   </a>
-  <a href="#" className="hover:text-orange-400">
+  <a href="/contact" className="hover:text-orange-400">
     Contact
   </a>
   <style jsx>{`

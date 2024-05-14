@@ -73,7 +73,7 @@ Before diving into the learning resources, please familiarize yourself with the 
 
 ## Getting Started
 
-To contribute to the Agrilearn Network project, follow these steps:
+To contribute to the project, follow these steps:
 
 1. **Fork the Repository**: Start by forking the repository to your GitHub account.
 2. **Clone the Repository**: Clone your forked repository to your local machine.

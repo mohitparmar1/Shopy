@@ -2,14 +2,12 @@ import React, { useContext, useState } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../Context/ShopContext";
-import { SavedContext } from "../Context/SavedContext"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductDisplay = (props) => {
   const { product } = props.data;
   const { AddToCart } = useContext(ShopContext);
-  const  { AddToList }=useContext(SavedContext);
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleSizeClick = (size) => {
@@ -98,46 +96,20 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="flex items-center mb-2 justify-start">
-          
-        <div className="flex items-center mb-2 justify-start space-x-4">
-
           <button
             onClick={() => {
-              if (product.size === "") {
-                toast.error("Please select size", {
-                autoClose:1500,
-              });
+              if (selectedSize === "") {
+                toast.error("Please select size");
                 return;
               }
-
               AddToCart(product.id); // Pass the quantity to the AddToCart function
               toast.success("Added to Cart");
-
-              AddToCart(product.id);
-              toast.success("Added to Cart ", {
-                autoClose:1500
-              });
-
             }}
             className="bg-orange-400 w-40 text-white px-4 py-2 rounded"
           >
             Add to Cart
           </button>
-
-
-          <button
-            onClick={() => {
-              
-              AddToList(product.id);
-              toast.success("Added to Wishlist");
-            }}
-            className="bg-blue-950 w-40 text-white px-4 py-2 rounded"
-          >
-            Add to Wishlist
-          </button>
-
-
-          <ToastContainer toastStyle={{backgroundColor: "lightgreen" , color: "black", fontWeight:"bold",marginTop:"28px"}}/>
+          <ToastContainer />
         </div>
         <div className="flex flex-col my-2">
           <p>
@@ -148,7 +120,9 @@ const ProductDisplay = (props) => {
             <button className="bg-blue-700 text-white p-1 m-1 rounded">
               Modern
             </button>
-            <button className="bg-blue-700 text-white p-1 m-1 rounded">latest</button>
+            <button className="bg-blue-700 text-white p-1 m-1 rounded">
+              latest
+            </button>
           </p>
         </div>
       </div>

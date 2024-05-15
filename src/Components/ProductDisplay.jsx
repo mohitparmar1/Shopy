@@ -100,7 +100,7 @@ const ProductDisplay = (props) => {
         <div className="flex items-center mb-2 justify-start space-x-4">
           <button
             onClick={() => {
-              if (product.size === "") {
+              if (selectedSize === "") {
                 toast.error("Please select size", {
                 autoClose:1500,
               });

@@ -9,7 +9,7 @@ const Popular = () => {
         Popular In Women
       </h1>
       <hr className="w-[200px] h-2 bg-gray-400 rounded-xl" />
-      <div className="flex">
+      <div className="sm:flex">
         {dataProduct.map((item) => {
           return <Item data={item} key={item.id} />;
         })}

@@ -1,19 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../Context/ShopContext";
+import { SavedContext } from "../Context/SavedContext"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ProductDisplay = (props) => {
   const { product } = props.data;
   const { AddToCart } = useContext(ShopContext);
+  const  { AddToList }=useContext(SavedContext);
+  const [selectedSize, setSelectedSize] = useState("");
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+
   return (
-    <div className="flex items-center  h-screen justify-center ml-10 ">
+    <div className="flex items-center h-screen justify-center ml-10">
       <div className="flex justify-center items-center gap-10">
         <div className="flex flex-col gap-4 max-h-46">
           <img src={product.image} alt="" className="w-40 h-46" />
           <img src={product.image} alt="" className="w-40 h-46" />
           <img src={product.image} alt="" className="w-40 h-46" />
         </div>
-        <div className="">
+        <div>
           <img src={product.image} alt="" className="w-96 h-[600px]" />
         </div>
       </div>
@@ -33,7 +44,7 @@ const ProductDisplay = (props) => {
             <p className="text-lg font-regular line-through">
               Price: ${product.old_price}
             </p>
-            <p className="text-lg  text-orange-500 font-Poppins font-bold">
+            <p className="text-lg text-orange-500 font-Poppins font-bold">
               Price: ${product.new_price}
             </p>
           </div>
@@ -49,30 +60,76 @@ const ProductDisplay = (props) => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
-        <div className="flex flex-col gap-4 w-3/4  my-5">
+        <div className="flex flex-col gap-4 w-3/4 my-5">
           <h1 className="text-lg font-bold">Select Size:</h1>
           <div className="flex flex-row gap-4">
-            <button className="bg-gray-400 active:bg-gray-300 text-white px-4 py-2 rounded">
+            <button
+              className={`${
+                selectedSize === "S" ? "bg-blue-500" : "bg-gray-400"
+              } active:bg-gray-800 text-white px-4 py-2 rounded`}
+              onClick={() => handleSizeClick("S")}
+            >
               S
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className={`${
+                selectedSize === "M" ? "bg-blue-500" : "bg-gray-400"
+              } active:bg-gray-800 text-white px-4 py-2 rounded`}
+              onClick={() => handleSizeClick("M")}
+            >
               M
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className={`${
+                selectedSize === "L" ? "bg-blue-500" : "bg-gray-400"
+              } active:bg-gray-800 text-white px-4 py-2 rounded`}
+              onClick={() => handleSizeClick("L")}
+            >
               L
             </button>
-            <button className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              className={`${
+                selectedSize === "XL" ? "bg-blue-500" : "bg-gray-400"
+              } active:bg-gray-800 text-white px-4 py-2 rounded`}
+              onClick={() => handleSizeClick("XL")}
+            >
               XL
             </button>
           </div>
         </div>
-        <div className="flex items-center mb-2  justify-start ">
+        <div className="flex items-center mb-2 justify-start space-x-4">
           <button
-            onClick={() => AddToCart(product.id)}
-            className="bg-orange-400 w-40  text-white px-4 py-2 rounded"
+            onClick={() => {
+              if (product.size === "") {
+                toast.error("Please select size", {
+                autoClose:1500,
+              });
+                return;
+              }
+              AddToCart(product.id);
+              toast.success("Added to Cart ", {
+                autoClose:1500
+              });
+            }}
+            className="bg-orange-400 w-40 text-white px-4 py-2 rounded"
           >
             Add to Cart
           </button>
+
+
+          <button
+            onClick={() => {
+              
+              AddToList(product.id);
+              toast.success("Added to Wishlist");
+            }}
+            className="bg-blue-950 w-40 text-white px-4 py-2 rounded"
+          >
+            Add to Wishlist
+          </button>
+
+
+          <ToastContainer toastStyle={{backgroundColor: "lightgreen" , color: "black", fontWeight:"bold",marginTop:"28px"}}/>
         </div>
         <div className="flex flex-col my-2">
           <p>

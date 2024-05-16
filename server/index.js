@@ -6,6 +6,7 @@ import { MensRouter } from './routes/mens-route.js';
 import connectDB from './config/DBconnect.js';
 import { WomensRouter } from './routes/womens-route.js';
 import { KidsRouter } from './routes/kids-route.js';
+import StripeRouter from './routes/Stripe-route.js';
 
 const app=express();
 
@@ -23,10 +24,14 @@ app.use(cors({
     credentials:true,
   }))
 
+
+
 app.use('/api/v1/mens',MensRouter);
 app.use('/api/v1/womens',WomensRouter);
 app.use('/api/v1/kids',KidsRouter);
-  
+app.use('/api',StripeRouter);
+
+
 const port=process.env.PORT||7000;
 
 app.listen(port,()=>{

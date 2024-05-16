@@ -15,6 +15,7 @@ import About from "./Pages/About";
 import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
         <Route path="/checknow" element={<CheckNowWithFooter />} />
+
 
       </Routes>
     </Router>

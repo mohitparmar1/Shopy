@@ -2,10 +2,17 @@ import React from "react";
 import { useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import removeIcon from "../assets/cart_cross_icon.png";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const CartItems = () => {
-  const { getCartTotalAmount, all_products, cartItem, RemoveFromCart } =
-    useContext(ShopContext);
+  const {
+    getCartTotalAmount,
+    all_products,
+    cartItem,
+    RemoveFromCart,
+    AddToCart,
+  } = useContext(ShopContext);
   return (
     <div className="w-full h-screen my-5">
       <div className="grid grid-cols-7 gap-5 items-center ml-14">
@@ -37,9 +44,13 @@ const CartItems = () => {
                 <p className=" max-w-[200px]">{item.name}</p>
                 <p>${item.new_price}</p>
                 <p>{item.size}</p>
-                <p className="text-lg bg-gray-300 text-center w-10 rounded-md">
-                  {cartItem[item.id]}
+
+                <p className="w-13">
+                  <RemoveIcon onClick={() => RemoveFromCart(item.id)} />
+                  <span className="bg-gray-300 rounded-md text-lg text-center p-1 pr-2 m-2"> {cartItem[item.id]}</span>
+                  <AddIcon onClick={() => AddToCart(item.id)} />
                 </p>
+
                 <p>${item.new_price * cartItem[item.id]}</p>
                 <img
                   src={removeIcon}

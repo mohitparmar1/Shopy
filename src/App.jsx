@@ -10,7 +10,7 @@ import Login from "./Pages/Login";
 import Product from "./Pages/Product";
 import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
-
+import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 
@@ -27,6 +27,8 @@ const App = () => {
         <Route path="/kids" element={<ShopCategoryWithFooter banner={kids_banner} category="kid" />} />
         <Route path="/product/:productId" element={<ProductWithFooter />} />
         <Route path="/cart" element={<CartWithFooter />} />
+        <Route path="/checknow" element={<CheckNowWithFooter />} />
+
       </Routes>
     </Router>
   );
@@ -66,5 +68,14 @@ const ShopCategoryWithFooter = ({ banner, category }) => (
     <Footer />
   </>
 );
+
+const CheckNowWithFooter = () => (
+  <>
+    <CheckNow />
+    <Footer />
+  </>
+);
+
+
 
 export default App;

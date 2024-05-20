@@ -1,3 +1,6 @@
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
@@ -26,7 +29,7 @@ const CheckNow = () => {
   };
 
   return (
-    <div className="w-full z-10 relative m-4">
+    <div className="w-full z-10 relative">
       <Slider {...settings}>
         <div>
           <img src={Hero} alt="image" className="w-full object-cover h-auto" />
@@ -56,4 +59,3 @@ const CheckNow = () => {
 }
 
 export default CheckNow;
-

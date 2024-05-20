@@ -8,10 +8,14 @@ const Popular = () => {
       <h1 className="text-4xl font-medium text-center font-Poppins mt-9 col-span-full">
         Popular In Women
       </h1>
-      <hr className="w-[200px] mx-auto h-2 bg-gray-400 rounded-xl col-span-full" />
-      {dataProduct.map((item) => {
-        return <Item data={item} key={item.id} />;
-      })}
+
+      <hr className="w-[200px] h-2 bg-gray-400 col-span-full rounded-xl" />
+      <div className="sm:flex">
+        {dataProduct.map((item) => {
+          return <Item data={item} key={item.id} />;
+        })}
+      </div>
+
     </div>
   );
 };

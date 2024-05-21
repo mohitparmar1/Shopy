@@ -5,6 +5,7 @@ import removeIcon from "../assets/cart_cross_icon.png";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import {loadStripe} from '@stripe/stripe-js';
+import img from "../assets/emptycart_img.png"
 
 const CartItems = () => {
   const {
@@ -14,6 +15,8 @@ const CartItems = () => {
     RemoveFromCart,
     AddToCart,
   } = useContext(ShopContext);
+
+  const isEmptyCart =  getCartTotalAmount()=== 0;
 
   //payment gateway
   const makePayment = async()=>{
@@ -64,6 +67,16 @@ console.log(cartItem)
         <p className="font-bold">Remove</p>
       </div>
       <hr />
+         
+      { isEmptyCart&&(
+        <div>
+              <img
+                    src={img}
+                    className="m-auto flex-initial"
+                  />
+              </div>
+      )}
+
       {all_products &&
         all_products.map((item) => {
           if (cartItem[item.id] > 0) {

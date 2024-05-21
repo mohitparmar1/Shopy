@@ -9,7 +9,7 @@ import { KidsRouter } from './routes/kids-route.js';
 
 const app=express();
 
-dotenv.config({path:'./config.env'});
+dotenv.config({path:'./config.env'})
 
 connectDB();
 
@@ -17,18 +17,20 @@ app.use(express.json());
 
 app.use(morgan('dev'))
 
-app.use(cors({
-    origin:"https://shopy-mohitparmar1s-projects.vercel.app/",
-    methods:['GET','POST'],
-    credentials:true,
-  }))
+app.use(
+  cors({
+    // origin: "https://shopy-mohitparmar1s-projects.vercel.app/",
+    origin: "*",
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 
 app.use('/api/v1/mens',MensRouter);
 app.use('/api/v1/womens',WomensRouter);
 app.use('/api/v1/kids',KidsRouter);
   
 const port=process.env.PORT||7000;
-
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
 })

@@ -14,7 +14,7 @@ import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 import Saved from "./Pages/WishList"
 import About from "./Pages/About";
-
+import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
@@ -34,9 +34,15 @@ const App = () => {
         <Route path="/cart" element={<CartWithFooter />} />
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
+
+        <Route path="/checknow" element={<CheckNowWithFooter />} />
+
+
+
         <Route path="*" element={<NotFound/>} />
         <Route path="/user/paymentsuccess" element={<PaymentSuccess/>} />
         <Route path="/user/paymentfail" element={<PaymentFail/>} />
+
       </Routes>
     </Router>
   );
@@ -86,6 +92,13 @@ const WishlistWithFooter=()=>(
     <Footer />
   </>
   
+);
+
+const CheckNowWithFooter = () => (
+  <>
+    <CheckNow />
+    <Footer />
+  </>
 );
 
 export default App;

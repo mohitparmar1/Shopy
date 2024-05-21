@@ -5,6 +5,8 @@ import men_banner from "./assets/banner_mens.png";
 import women_banner from "./assets/banner_women.png";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
+import PaymentFail from "./Pages/paymentfail";
+import PaymentSuccess from "./Pages/Success";
 import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import Product from "./Pages/Product";
@@ -12,7 +14,7 @@ import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 import Saved from "./Pages/WishList"
 import About from "./Pages/About";
-
+import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
@@ -32,7 +34,14 @@ const App = () => {
         <Route path="/cart" element={<CartWithFooter />} />
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
+
+        <Route path="/checknow" element={<CheckNowWithFooter />} />
+
+
+
         <Route path="*" element={<NotFound/>} />
+        <Route path="/user/paymentsuccess" element={<PaymentSuccess/>} />
+        <Route path="/user/paymentfail" element={<PaymentFail/>} />
 
       </Routes>
     </Router>
@@ -83,6 +92,13 @@ const WishlistWithFooter=()=>(
     <Footer />
   </>
   
+);
+
+const CheckNowWithFooter = () => (
+  <>
+    <CheckNow />
+    <Footer />
+  </>
 );
 
 export default App;

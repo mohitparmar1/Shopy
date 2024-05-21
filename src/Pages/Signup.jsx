@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { IoEyeOutline, IoEyeOffOutline   } from "react-icons/io5";
 const Signup = () => {
   const navigate = useNavigate();
    const [email, setEmail] = useState("");
@@ -11,6 +12,8 @@ const Signup = () => {
    const [isPasswordFocused, setIsPasswordFocused] = useState(false);
    const [isConfirmPasswordValid,setIsConfirmPasswordValid] = useState(false)
    const [isConfirmPasswordFocused,setIsConfirmPasswordFocused]=useState(false)
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isConfirmPasswordVisible, setConfirmIsPasswordVisible] = useState(false);
    const handleSignUp = async (e) => {
      e.preventDefault();
      console.log(email, " ", password," ",confirmPassword);
@@ -53,45 +56,103 @@ const Signup = () => {
             * Password is not valid
           </div>
         )}
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className="mb-5 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg"
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setIsPasswordValid(
-              e.target.value.trim().length > 0 &&
-                e.target.value.trim().length >= 8
-            );
+        <div
+          className="rela"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            height: "max-content",
+            position: "relative",
           }}
-          onFocus={() => {
-            setIsEmailFocused(false);
-            setIsPasswordFocused(true);
-            setIsConfirmPasswordFocused(false);
-          }}
-        />
+        >
+          <input
+            type={isPasswordVisible ? "text" : "password"}
+            name="password"
+            id="password"
+            className="mb-2 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg pr-10"
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setIsPasswordValid(
+                e.target.value.trim().length > 0 &&
+                  e.target.value.trim().length >= 8
+              );
+            }}
+            onFocus={() => {
+              setIsEmailFocused(false);
+              setIsPasswordFocused(true);
+              setIsConfirmPasswordFocused(false);
+            }}
+          />
+          <div
+            className="p-2"
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              cursor: "pointer",
+            }}
+            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+          >
+            {!isPasswordVisible ? (
+              <IoEyeOffOutline color="black" size={20} />
+            ) : (
+              <IoEyeOutline color="black" size={20} />
+            )}
+          </div>
+        </div>
         <label htmlFor="password">Confirm Password</label>
         {isConfirmPasswordFocused && !isConfirmPasswordValid && (
           <div style={{ color: "red", fontSize: "0.8rem" }}>
             * Password doesn't match
           </div>
         )}
-        <input
-          type="password"
-          name="confirmpassword"
-          id="password"
-          className="mb-5 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg"
-          onChange={(e) => {
-            setConfirmPassword(e.target.value);
-            setIsConfirmPasswordValid(e.target.value === password);
+        <div
+          className="rela1"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            height: "max-content",
+            position: "relative",
           }}
-          onFocus={() => {
-            setIsEmailFocused(false);
-            setIsPasswordFocused(false);
-            setIsConfirmPasswordFocused(true);
-          }}
-        />
+        >
+          <input
+            type={isConfirmPasswordVisible ? "text" : "password"}
+            name="confirmpassword"
+            id="password"
+            className="mb-5 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg"
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+              setIsConfirmPasswordValid(e.target.value === password);
+            }}
+            onFocus={() => {
+              setIsEmailFocused(false);
+              setIsPasswordFocused(false);
+              setIsConfirmPasswordFocused(true);
+            }}
+          />
+          <div
+            className="p-2"
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              cursor: "pointer",
+            }}
+            onClick={() =>
+              setConfirmIsPasswordVisible(!isConfirmPasswordVisible)
+            }
+          >
+            {!isConfirmPasswordVisible ? (
+              <IoEyeOffOutline color="black" size={20} />
+            ) : (
+              <IoEyeOutline color="black" size={20} />
+            )}
+          </div>
+        </div>
         <button
           type="submit"
           className="border-2 border-gray-200 bg-gray-300 h-12 w-full font-bold rounded-lg"

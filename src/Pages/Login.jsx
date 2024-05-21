@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import google from '../assets/google.png'
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+
 const Login = () => {
   const [active, setActive] = useState(true);
   const [email, setEmail] = useState("");
@@ -9,6 +11,7 @@ const Login = () => {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -48,23 +51,52 @@ const Login = () => {
             * Password is not valid
           </div>
         )}
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className="mb-5 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg "
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setIsPasswordValid(
-              e.target.value.trim().length > 0 &&
-                e.target.value.trim().length >= 8
-            );
+        <div
+          className="rela2"
+          type={isPasswordVisible ? "text" : "password"}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            height: "max-content",
+            position: "relative",
           }}
-          onFocus={() => {
-            setIsEmailFocused(false);
-            setIsPasswordFocused(true);
-          }}
-        />
+        >
+          <input
+            type={isPasswordVisible ? "text" : "password"}
+            name="password"
+            id="password"
+            className="mb-2 mt-1 w-full p-3 outline-none border-2 border-gray-200 rounded-lg "
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setIsPasswordValid(
+                e.target.value.trim().length > 0 &&
+                  e.target.value.trim().length >= 8
+              );
+            }}
+            onFocus={() => {
+              setIsEmailFocused(false);
+              setIsPasswordFocused(true);
+            }}
+          />
+          <div
+            className="p-2"
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              cursor: "pointer",
+            }}
+            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+          >
+            {!isPasswordVisible ? (
+              <IoEyeOffOutline color="black" size={20} />
+            ) : (
+              <IoEyeOutline color="black" size={20} />
+            )}
+          </div>
+        </div>
         <button
           type="submit"
           disabled={!isEmailValid || !isPasswordValid}
@@ -78,7 +110,7 @@ const Login = () => {
         >
           Login
         </button>
-        <p className="mt-2 text-xs " style={{fontSize:"0.8rem"}}>
+        <p className="mt-2 text-xs " style={{ fontSize: "0.8rem" }}>
           {"Don't have an account?"}
           <span
             className="text-blue-500 cursor-pointer ml-2"

@@ -18,6 +18,7 @@ import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
+import Search from "./Pages/Search";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/cart" element={<CartWithFooter />} />
         <Route path="/wishlist" element={<WishlistWithFooter />} />
         <Route path="/about" element={<About/>} />
+        <Route path="/search" element={<Search/>} />
 
         <Route path="/checknow" element={<CheckNowWithFooter />} />
 

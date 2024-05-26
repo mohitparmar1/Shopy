@@ -10,7 +10,7 @@ import StripeRouter from './routes/Stripe-route.js';
 
 const app=express();
 
-dotenv.config({path:'./config.env'});
+dotenv.config({path:'./config.env'})
 
 connectDB();
 
@@ -33,7 +33,6 @@ app.use('/api',StripeRouter);
 
 
 const port=process.env.PORT||7000;
-
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
 })

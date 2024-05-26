@@ -9,6 +9,7 @@ const Item = (props) => {
   const { AddToList, listItem } = useContext(SavedContext);
 
   return (
+
     <div className="m-5 cursor-pointer transition delay-300 scale-100 hover:scale-95 relative">
       <Link to={`/product/${id}`}>
         <div>
@@ -18,12 +19,12 @@ const Item = (props) => {
             alt=""
             className="transition delay-300 scale-100 hover:scale-95"
           />
-          <p className="text-gray-500 max-w-80">{name}</p>
+          <p className="text-gray-500 dark:text-gray-400 max-w-80">{name}</p>
           <div className="flex flex-row gap-3">
-            <p className="font-semibold text-gray-500 line-through">
+            <p className="font-semibold text-gray-500 dark:text-gray-400 line-through">
               $ {old_price}
             </p>
-            <p className="font-semibold text-black">$ {new_price}</p>
+            <p className="font-semibold text-black dark:text-white">$ {new_price}</p>
           </div>
         </div>
       </Link>

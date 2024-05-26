@@ -4,6 +4,7 @@ import { ShopContext } from "../Context/ShopContext";
 import {SavedContext} from "../Context/SavedContext"
 import Cart from "../assets/cart_icon.png";
 import Wishlist from "../assets/wishlist_icon.png";
+import { Search } from "@mui/icons-material";
 
 
 const Navbar = () => {
@@ -52,6 +53,10 @@ const Navbar = () => {
         <button className="font-Poppins cursor-pointer text-lg m-5 border text-black bg-white border-gray-400 rounded-3xl px-4 py-1 active:bg-slate-200">
           <Link to="/login" className="hover:text-orange-400" >Login</Link>
         </button>
+        <Link to="/search">
+          
+          <div className="cursor-pointer mr-2"><Search /></div>
+        </Link>
         <Link to="/cart">
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer" />
         </Link>

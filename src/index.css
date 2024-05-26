@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.heading-font {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.gradient {
+    background: rgb(19,28,70);
+    background: linear-gradient(0deg, rgba(19,28,70,1) 18%, rgba(0,0,0,1) 49%, rgba(0,0,0,1) 100%);
+}

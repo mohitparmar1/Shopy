@@ -1,4 +1,8 @@
-# Learn
+<h1 align="center">✨ Contributors Guide ✨</h1>
+<h3 align="center">Welcome to Our project! 😍<br> We greatly appreciate your willingness to contribute.😊 <br>This guide will help you get started with the project and make your contributions.</h3>
+
+![Line](https://user-images.githubusercontent.com/85225156/171937799-8fc9e255-9889-4642-9c92-6df85fb86e82.gif)
+
 
 This document provides instructions on how to set up and build the project locally.
 This project is a clothing order website that allows user to add products , list their own products, make dashboard of seller
@@ -121,3 +125,22 @@ Focus on quality and continuous learning:
 - Follow project guidelines and coding style.
 - Aim for structured and optimized code.
 - Mistakes are allowed and are a part of the learning process!
+
+Thank you for your contribution!!
+
+![Line](https://user-images.githubusercontent.com/85225156/171937799-8fc9e255-9889-4642-9c92-6df85fb86e82.gif)
+
+<h2 align="center">Need more help? 🤔</h1>
+<p align="center">
+  You can refer to the following articles on basics of Git and Github and also contact the Project Mentors, in case you are stuck: <br>
+  <a href="https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request">How to create a Issue</a> <br>
+  <a href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">Forking a Repo</a> <br>
+  <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">Cloning a Repo</a> <br>
+  <a href="https://opensource.com/article/19/7/create-pull-request-github">How to create a Pull Request</a> <br>
+  <a href="https://docs.github.com/get-started">Getting started with Git and GitHub</a> <br>
+</p>
+
+<h2 align="center">Tip from us 😇</h1>
+<p align="center">Learning and understanding take time, so don't worry at all. We have full confidence in you. You've got this!!</b>! 💪</p>
+<h3 align="center">Show some &nbsp;❤️&nbsp; by &nbsp;🌟&nbsp; this repository!</h3>
+

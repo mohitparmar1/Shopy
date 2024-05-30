@@ -2,14 +2,12 @@ import React, { useContext, useState } from "react";
 import starIcon from "../assets/star_icon.png";
 import starDullIcon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../Context/ShopContext";
-import { SavedContext } from "../Context/SavedContext"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductDisplay = (props) => {
   const { product } = props.data;
   const { AddToCart } = useContext(ShopContext);
-  const  { AddToList }=useContext(SavedContext);
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleSizeClick = (size) => {
@@ -17,18 +15,18 @@ const ProductDisplay = (props) => {
   };
 
   return (
-    <div className="flex items-center h-screen justify-center ml-10">
-      <div className="flex justify-center items-center gap-10">
+    <div className="flex flex-col md:flex-row items-center justify-center ml-10">
+      <div className="flex gap-10 mb-5 md:mb-0">
         <div className="flex flex-col gap-4 max-h-46">
-          <img src={product.image} alt="" className="w-40 h-46" />
-          <img src={product.image} alt="" className="w-40 h-46" />
-          <img src={product.image} alt="" className="w-40 h-46" />
+          <img src={product.image} alt="" className="w-40 h-auto" />
+          <img src={product.image} alt="" className="w-40 h-auto" />
+          <img src={product.image} alt="" className="w-40 h-auto" />
         </div>
         <div>
-          <img src={product.image} alt="" className="w-96 h-[600px]" />
+          <img src={product.image} alt="" className="w-96 h-auto" />
         </div>
       </div>
-      <div className="flex flex-col flex-1 ml-10 w-1/2">
+      <div className="flex flex-col flex-1 ml-10 w-full md:w-1/2">
         <h1 className="text-2xl font-bold mb-4 mt-5">{product.name}</h1>
         <div className="flex flex-row items-center">
           <img src={starIcon} alt="" className="w-4 h-4" />
@@ -51,7 +49,7 @@ const ProductDisplay = (props) => {
           <p className="text-gray-700">Category: {product.category}</p>
           <p className="text-gray-700">Brand: {product.brand}</p>
         </div>
-        <div className="flex flex-row gap-4 w-3/4">
+        <div className="flex flex-row gap-4 w-full md:w-3/4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -60,7 +58,7 @@ const ProductDisplay = (props) => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
-        <div className="flex flex-col gap-4 w-3/4 my-5">
+        <div className="flex flex-col gap-4 w-full md:w-3/4 my-5">
           <h1 className="text-lg font-bold">Select Size:</h1>
           <div className="flex flex-row gap-4">
             <button
@@ -97,46 +95,34 @@ const ProductDisplay = (props) => {
             </button>
           </div>
         </div>
-        <div className="flex items-center mb-2 justify-start space-x-4">
+        <div className="flex items-center mb-2 justify-start">
           <button
             onClick={() => {
-              if (product.size === "") {
-                toast.error("Please select size", {
-                autoClose:1500,
-              });
+              if (selectedSize === "") {
+                toast.error("Please select size");
                 return;
               }
-              AddToCart(product.id);
-              toast.success("Added to Cart ", {
-                autoClose:1500
-              });
+              AddToCart(product.id); // Pass the quantity to the AddToCart function
+              toast.success("Added to Cart");
             }}
             className="bg-orange-400 w-40 text-white px-4 py-2 rounded"
           >
             Add to Cart
           </button>
-
-
-          <button
-            onClick={() => {
-              
-              AddToList(product.id);
-              toast.success("Added to Wishlist");
-            }}
-            className="bg-blue-950 w-40 text-white px-4 py-2 rounded"
-          >
-            Add to Wishlist
-          </button>
-
-
-          <ToastContainer toastStyle={{backgroundColor: "lightgreen" , color: "black", fontWeight:"bold",marginTop:"28px"}}/>
+          <ToastContainer />
         </div>
         <div className="flex flex-col my-2">
           <p>
             <span className="font-bold">Category :</span> T-shirt,Shirt
           </p>
           <p>
-            <span className="font-bold">Tags :</span>Modern , latest
+            <span className="font-bold">Tags :</span>
+            <button className="bg-blue-700 text-white p-1 m-1 rounded">
+              Modern
+            </button>
+            <button className="bg-blue-700 text-white p-1 m-1 rounded">
+              latest
+            </button>
           </p>
         </div>
       </div>

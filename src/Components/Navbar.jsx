@@ -17,6 +17,7 @@ const Navbar = () => {
           <Link to="/">Shopy</Link>
         </h2>
       </div>
+
       <div className="flex items-center space-x-4 text-black dark:text-white">
         <Link to="/" className="hover:text-orange-400 dark:hover:text-orange-300">
           Home
@@ -40,7 +41,7 @@ const Navbar = () => {
         <Link to="/about" className="hover:text-orange-400 dark:hover:text-orange-300">
           About Us
         </Link>
-        <Link to="#" className="hover:text-orange-400 dark:hover:text-orange-300">
+        <Link to="/contact" className="hover:text-orange-400 dark:hover:text-orange-300">
           Contact
         </Link>
         <style jsx>{`
@@ -49,6 +50,7 @@ const Navbar = () => {
           }
         `}</style>
       </div>
+
       <div className="flex items-center mx-5">
         <button className="font-Poppins cursor-pointer text-lg m-5 border text-black dark:text-white bg-white dark:bg-gray-800 border-gray-400 dark:border-gray-600 rounded-3xl px-4 py-1 active:bg-slate-200 dark:active:bg-slate-700">
           <Link to="/login" className="hover:text-orange-400 dark:hover:text-orange-300">

@@ -20,7 +20,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="py-2 px-4 text-gray-800 dark:text-gray-200 rounded-full transition-all duration-300 ease-in-out"
+      className="py-2 px-4 text-gray-800 dark:text-gray-200 rounded-full transition-all ease-in-out hover:scale-110 duration-300"
     >
       {darkMode ? (
         <HiOutlineSun className="h-5 w-5 mr-1" />

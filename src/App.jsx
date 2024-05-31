@@ -19,6 +19,7 @@ import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
+import Payment from './Components/Payment'
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/contact" element={<Contact/>} />
           <Route path="/checknow" element={<CheckNowWithFooter />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/user/paymentsuccess" element={<PaymentSuccess />} />
           <Route path="/user/paymentfail" element={<PaymentFail />} />
         </Routes>

@@ -38,7 +38,7 @@ const Footer = () => {
           <img src={whatsappIcon} alt="WhatsApp" />
           <img src={pintesterIcon} alt="Pinterest" />
         </div>
-      </div>
+      </div>       
       <div className="flex items-center justify-center space-x-10 justify-evenly">
         <button className="hover:bg-orange-400 hover:text-white focus:outline-none">
           <a href="#" className="block p-2">Home</a>
@@ -57,7 +57,7 @@ const Footer = () => {
       <div className="">
         <p className="text-sm text-black ml-5 mt-2 text-center">&copy; {new Date().getFullYear()} Shopy. All rights reserved.</p>
       </div>
-    </>
+    <footer/>
   );
 };
 

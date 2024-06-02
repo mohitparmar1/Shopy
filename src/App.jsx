@@ -19,12 +19,12 @@ import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
+import Search from "./Pages/Search";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-
       <div className="bg-white text-black dark:bg-black dark:text-white min-h-screen">
         <Routes>
           <Route path="/login" element={<LoginWithFooter />} />
@@ -42,6 +42,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/user/paymentsuccess" element={<PaymentSuccess />} />
           <Route path="/user/paymentfail" element={<PaymentFail />} />
+            <Route path="/search" element={<Search/>} />
         </Routes>
       </div>
 

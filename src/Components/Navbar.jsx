@@ -4,7 +4,9 @@ import { ShopContext } from "../Context/ShopContext";
 import { SavedContext } from "../Context/SavedContext";
 import Cart from "../assets/cart_icon.png";
 import Wishlist from "../assets/wishlist_icon.png";
+import { Search } from "@mui/icons-material";
 import DarkModeToggle from './DarkModeToggle'
+
 
 const Navbar = () => {
   const { getCartQuantity } = useContext(ShopContext);
@@ -57,6 +59,10 @@ const Navbar = () => {
             Login
           </Link>
         </button>
+        <Link to="/search">
+          
+          <div className="cursor-pointer mr-2"><Search /></div>
+        </Link>
         <Link to="/cart">
           <img src={Cart} alt="cart" className="w-6 h-6 cursor-pointer filter dark:invert transition-all ease-in-out hover:scale-110 duration-300" />
         </Link>

@@ -4,6 +4,7 @@ import { generateOTP } from "../../utils/generateOTP.js";
 import { sendEmail } from "../../utils/sendEmail.js";
 import { generateToken } from "../../utils/generateJwtToken.js";
 import { decodeJWT } from "../../utils/decodeJwtToken.js";
+import bcrypt from 'bcrypt';
 /*
   Forgot Password
   
@@ -21,6 +22,7 @@ const forgotPassword = async (req, res) => {
 
     // generating otp
     const otp = generateOTP();
+    const otpExpiration = Date.now() + 2 * 60 * 1000; // OTP expires in 2 minutes
     await OtpModel.create({ email: user.email, otp });
     // Send OTP via email
     const emailOptions = {
@@ -64,10 +66,11 @@ const verifyAndResetPassword = async (req, res) => {
     const otpData = await OtpModel.findOne({ email }).sort({ createdAt: -1 });
 
     // Check if OTP exists in the database
-    if (!otpData) {
-      return res
-        .status(404)
-        .json({ success: false, message: "OTP Expired. Click on Resend OTP" });
+    if (!otpData || otpData.expiresAt < Date.now()) {
+      return res.status(404).json({
+        success: false,
+        message: "OTP Expired. Click on Resend OTP"
+      });
     }
 
     // Compare the OTP provided by the user with the OTP stored in the database
@@ -157,7 +160,8 @@ const setNewPassword = async (req, res) => {
         message: "Invalid Token or User not found",
       });
     }
-
+    // Hash the new password before saving
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
     user.password = newPassword;
     user = await user.save();
 

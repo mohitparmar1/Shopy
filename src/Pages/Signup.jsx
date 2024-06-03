@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline   } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 const Signup = () => {
+  // console.log(backend_url);
   const navigate = useNavigate();
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
@@ -16,12 +20,32 @@ const Signup = () => {
     const [isConfirmPasswordVisible, setConfirmIsPasswordVisible] = useState(false);
    const handleSignUp = async (e) => {
      e.preventDefault();
-     console.log(email, " ", password," ",confirmPassword);
+      try{
+        const response= await axios.post(`${backend_url}/signup`, {
+          email: email,
+          password: password,
+        },{
+          withCredentials:true
+        })
+        if (response.data.message==="User Created") {
+          toast.success(response.data.message);
+          setTimeout(() => {
+            navigate("/login");
+          },2000)
+        } else {
+          throw new Error(response.data.message);
+        } 
+    }
+    catch(err){
+      toast.error(err.response.data.message);
+    }
+
    };
   const handleClicked = () => {
     navigate("/login");
   };
   return (
+    <>
     <div className="flex flex-col items-center justify-center w-full m-auto h-screen bg-gradient-to-b from-purple-100 to-white">
       <h1 className="text-5xl mb-5 font-bold">Sign up</h1>
       <form className="flex flex-col w-96 h-3/5">
@@ -179,6 +203,8 @@ const Signup = () => {
         </p>
       </form>
     </div>
+    <ToastContainer />
+    </>
   );
 };
 

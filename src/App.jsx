@@ -18,7 +18,6 @@ import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
-
 const App = () => {
   return (
     <Router>

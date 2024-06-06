@@ -13,9 +13,10 @@ const defaultWishlist = () => {
 const SavedContextProvider = (props) => {
   const [listItem, setListItem] = useState(defaultWishlist());
   const AddToList = (id) => {
+
     setListItem((prev) => {
       
-        const updatedState = { ...prev, [id]: true };
+        const updatedState = { ...prev, [id]: !listItem[id] };
         console.log(updatedState);
       return updatedState;
       

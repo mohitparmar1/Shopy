@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
+import img from '../assets/Empty_Cart_img.png'
 
 const CartItems = () => {
   const {
@@ -15,6 +16,9 @@ const CartItems = () => {
     RemoveFromCart,
     AddToCart,
   } = useContext(ShopContext);
+
+
+  const isEmptyCart=Object.keys(cartItem).length
 
   //payment gateway
   const makePayment = async () => {
@@ -73,6 +77,9 @@ const CartItems = () => {
               <span className="font-semibold">Quantity</span>
               <span className="font-semibold">Total Price</span>
             </div>
+
+            {isEmptyCart && (<img src={img} alt="image" />)}
+
             {all_products &&
               all_products.map((item) => {
                 if (cartItem[item.id] > 0) {

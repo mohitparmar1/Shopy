@@ -14,10 +14,13 @@ import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 import Saved from "./Pages/WishList";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import CheckNow from "./Components/CheckNow";
 import "./index.css";
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
+import Search from "./Pages/Search";
+
 const App = () => {
   return (
     <Router>
@@ -34,12 +37,15 @@ const App = () => {
           <Route path="/cart" element={<CartWithFooter />} />
           <Route path="/wishlist" element={<WishlistWithFooter />} />
           <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact/>} />
           <Route path="/checknow" element={<CheckNowWithFooter />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/user/paymentsuccess" element={<PaymentSuccess />} />
           <Route path="/user/paymentfail" element={<PaymentFail />} />
+            <Route path="/search" element={<Search/>} />
         </Routes>
       </div>
+
     </Router>
   );
 };

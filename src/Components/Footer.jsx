@@ -6,24 +6,27 @@ import whatsappIcon from "../assets/whatsapp_icon.png";
 const Footer = () => {
   return (
     <>
-      <div className="bg-gradient-to-b from-purple-100 to-white py-12 flex items-center justify-between">
+      <div className="flex items-center justify-between py-12 bg-gradient-to-b from-purple-100 to-white">
         <div className="">
-          <h2 className="text-4xl font-bold text-orange-400 ml-5">Shopy</h2>
-          <p className="text-gray-400 ml-5">Connecting people through fashion.</p>
+          {/* <p className="ml-5 text-4xl font-bold text-orange-400 cursor-pointer">Shopy</p> */}
+          <h2 className="ml-5 text-4xl font-bold text-orange-400 cursor-pointer">
+          <Link to="/">Shopy</Link>
+        </h2>
+          <p className="ml-5 text-gray-400">Connecting people through fashion.</p>
         </div>
 
-        <div className="max-w-2xl text-center mb-3">
-          <h2 className="text-3xl font-bold mb-2">Subscribe to Our Newsletter</h2>
-          <p className="text-gray-600 mb-2 ">
+        <div className="max-w-2xl mb-3 text-center">
+          <h2 className="mb-2 text-3xl font-bold">Subscribe to Our Newsletter</h2>
+          <p className="mb-2 text-gray-600 ">
             Get updates on the latest collections, promotions, and more.
           </p>
           <div className="flex justify-center mb-4">
             <input
               type="email"
               placeholder="Your email address"
-              className="w-1/2 border p-2 rounded-l-full focus:outline-none"
+              className="w-1/2 p-2 border rounded-l-full focus:outline-none"
             />
-            <button className="bg-black text-white px-6 hover:bg-blue-600 focus:outline-none rounded-r-full">
+            <button className="px-6 text-white bg-black rounded-r-full hover:bg-blue-600 focus:outline-none">
               Subscribe
             </button>
           </div>
@@ -32,14 +35,14 @@ const Footer = () => {
         {/* Shopy section */}
 
         {/* Copyright section */}
-        <div className="flex items-center justify-center space-x-4 mb-4">
+        <div className="flex items-center justify-center mb-4 space-x-4 cursor-pointer">
           <p>Follow us on</p>
           <img src={instaIcon} alt="Instagram" />
-          <img src={whatsappIcon} alt="WhatsApp" />
-          <img src={pintesterIcon} alt="Pinterest" />
+          <img src={whatsappIcon} alt="WhatsApp"  />
+          <img src={pintesterIcon} alt="Pinterest"  />
         </div>
       </div>
-      <div className="flex items-center justify-center space-x-10 justify-evenly">
+      <div className="flex items-center space-x-10 justify-evenly">
         <button className="hover:bg-orange-400 hover:text-white focus:outline-none">
           <a href="#" className="block p-2">Home</a>
         </button>
@@ -55,7 +58,7 @@ const Footer = () => {
       </div>
       <hr className="border-black" />
       <div className="">
-        <p className="text-sm text-black ml-5 mt-2 text-center">&copy; {new Date().getFullYear()} Shopy. All rights reserved.</p>
+        <p className="mt-2 ml-5 text-sm text-center text-black">&copy; {new Date().getFullYear()} Shopy. All rights reserved.</p>
       </div>
     </>
   );

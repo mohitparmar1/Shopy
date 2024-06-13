@@ -49,7 +49,11 @@ Follow these steps to set up the project locally:
     ```bash
     npm run dev
     ```
+### Docker run 
 
+```
+docker compose up --build
+```
 ## Contributing Guidelines
 
 Before diving into the learning resources, please familiarize yourself with the following contributing guidelines:

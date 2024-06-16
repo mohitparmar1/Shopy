@@ -1,18 +1,25 @@
-import react, { createContext, useState } from "react";
+import react, { createContext, useEffect, useState } from "react";
 import all_products from "../assets/all_product";
 export const ShopContext = createContext(null);
 
 const getCartDefault = () => {
-  let cart = {};
-  for (let index = 0; index < all_products.length; index++) {
-    cart[index] = 0;
+
+  const existingItems = JSON.parse(localStorage.getItem("shopy-cart"));
+  if (existingItems) {
+    return existingItems
+  } else {
+    let cart = {};
+    for (let index = 0; index < all_products.length; index++) {
+      cart[index] = 0;
+    }
+    return cart;
   }
-  return cart;
+
 };
 
 const ShopContextProvider = (props) => {
   const [cartItem, setCartItem] = useState(getCartDefault());
-  
+
   const AddToCart = (id) => {
     setCartItem((prev) => {
       const updatedState = { ...prev, [id]: prev[id] + 1 };
@@ -53,6 +60,10 @@ const ShopContextProvider = (props) => {
     }
     return totalQuantity;
   };
+
+  useEffect(() => {
+    localStorage.setItem("shopy-cart", JSON.stringify(cartItem))
+  }, [cartItem])
 
   const contextValue = {
     all_products,

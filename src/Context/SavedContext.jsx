@@ -1,13 +1,21 @@
-import react, { createContext, useState } from "react";
+import react, { createContext, useEffect, useState } from "react";
 import all_products from "../assets/all_product";
 export const SavedContext = createContext(null);  //ContextAPI for providing state variables to components of Wishlist
 
 const defaultWishlist = () => {
-  let list = {};
-  for (let index = 0; index < all_products.length; index++) {
-    list[index] = false;
+
+  const existingItems = JSON.parse(localStorage.getItem("shopy-wishlist"));
+
+  if (existingItems) {
+    return existingItems;
+  } else {
+    let list = {};
+    for (let index = 0; index < all_products.length; index++) {
+      list[index] = false;
+    }
+    return list;
+
   }
-  return list;
 };
 
 const SavedContextProvider = (props) => {
@@ -15,49 +23,40 @@ const SavedContextProvider = (props) => {
   const AddToList = (id) => {
 
     setListItem((prev) => {
-      
-        const updatedState = { ...prev, [id]: !listItem[id] };
-        console.log(updatedState);
+
+      const updatedState = { ...prev, [id]: !listItem[id] };
+      console.log(updatedState);
       return updatedState;
-      
-      
+
+
     });
   };
 
   const RemoveFromList = (id) => {
     if (listItem[id]) {
       setListItem((prev) => {
-        
+
         const updatedState = { ...prev, [id]: false };
-        
+
         console.log(updatedState);
         return updatedState;
       });
     }
   };
 
-  /*const getCartTotalAmount = () => {
-    let totalAmount = 0;
-    for (const item in cartItem) {
-      if (cartItem[item] > 0) {
-        let itemInfo = all_products.find(
-          (product) => product.id === Number(item)
-        );
-        totalAmount += cartItem[item] * itemInfo.new_price;
-      }
-    }
-    return totalAmount;
-  };*/
-
   const getListQuantity = () => {
     let totalQuantity = 0;
     for (const item in listItem) {
       if (listItem[item]) {
-        totalQuantity ++;
+        totalQuantity++;
       }
     }
     return totalQuantity;
   };
+
+  useEffect(() => {
+    localStorage.setItem("shopy-wishlist", JSON.stringify(listItem))
+  }, [listItem])
 
   const contextValue = {
     all_products,

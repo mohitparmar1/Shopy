@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const StyledBreadcrumb = styled(Chip)({
   backgroundColor: "#f5f5f5", // Light grey background
-  height: "24px", // Static height value
+  height: "25px", // Static height value
   color: "#000", // Primary text color
   fontWeight: 400, // Regular font weight
   "&:hover, &:focus": {

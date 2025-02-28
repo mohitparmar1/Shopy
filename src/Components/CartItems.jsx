@@ -14,7 +14,9 @@ const CartItems = () => {
     all_products,
     cartItem,
     RemoveFromCart,
+    ClearCart,
     AddToCart,
+    DecreaseFromCart,  // New function added
   } = useContext(ShopContext);
 
   const isEmptyCart = Object.keys(cartItem).length === 0;
@@ -59,11 +61,18 @@ const CartItems = () => {
                         <option>{item.size}</option>
                       </select>
                       <div className="flex items-center">
-                        <button className="p-1">-</button>
-                        <span className="mx-2">2</span>
-                        <button className="p-1">+</button>
+                        <button className="p-1" onClick={() => DecreaseFromCart(item.id)}>
+                          <RemoveIcon />
+                        </button>
+                        <span className="mx-2">{cartItem[item.id]}</span>
+                        <button className="p-1" onClick={() => AddToCart(item.id)}>
+                          <AddIcon />
+                        </button>
                       </div>
                       <span>${item.new_price * cartItem[item.id]}</span>
+                      <button className="p-1 ml-4" onClick={() => RemoveFromCart(item.id)}>
+                        <img src={removeIcon} alt="Remove Item" className="w-6 h-6" />
+                      </button>
                     </div>
                   );
                 }

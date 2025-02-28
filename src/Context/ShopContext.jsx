@@ -21,16 +21,31 @@ const ShopContextProvider = (props) => {
     });
   };
 
-  const RemoveFromCart = (id) => {
-    if (cartItem[id] > 0) {
-      setCartItem((prev) => {
-        const updatedState = { ...prev, [id]: prev[id] - 1 };
-        console.log(updatedState);
-        return updatedState;
-      });
-    }
+  const DecreaseFromCart = (id) => {
+    setCartItem((prev) => {
+      if (prev[id] && prev[id] > 1) {
+        return { ...prev, [id]: prev[id] - 1 };
+      } else {
+        const newCart = { ...prev };
+        delete newCart[id]; // Agar quantity 1 hai toh item remove karna hai
+        return newCart;
+      }
+    });
   };
+  
 
+  const RemoveFromCart = (id) => {
+    setCartItem((prev) => {
+      const newCart = { ...prev };
+      delete newCart[id]; // Sirf selected item remove karega
+      return newCart;
+    });
+  };
+  
+  const ClearCart = () => {
+    setCartItem(getCartDefault()); // Cart reset karega taaki structure maintain rahe
+  };
+      
   const getCartTotalAmount = () => {
     let totalAmount = 0;
     for (const item in cartItem) {
@@ -60,7 +75,9 @@ const ShopContextProvider = (props) => {
     AddToCart,
     RemoveFromCart,
     getCartTotalAmount,
+    ClearCart,
     getCartQuantity,
+    DecreaseFromCart
   };
   return (
     <ShopContext.Provider value={contextValue}>

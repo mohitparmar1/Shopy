@@ -11,10 +11,72 @@
       rel="stylesheet"
     />
     <title>shopy</title>
-    <script type="module" crossorigin src="/assets/index-pXWPBzfy.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-ZnNZpM0-.css">
+    <style>
+        /* Add your preloader CSS here */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling while loading */
+        }
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Background color of the preloader */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure the preloader is above all other content */
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@100;300&family=Roboto&family=Roboto+Slab:wght@500&display=swap"
+      rel="stylesheet"
+
+    />
+    <title>shopy</title>
+    <script type="module" crossorigin src="/assets/index-Zg1fuqc5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj2grr-7.css">
   </head>
   <body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div id="root" style="display: none;"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Simulate a delay for demo purposes (e.g., fetching data)
+            setTimeout(function() {
+                // Hide the preloader
+                document.getElementById("preloader").style.display = "none";
+                // Show the main content
+                document.getElementById("root").style.display = "block";
+                // Allow scrolling
+                document.body.style.overflow = "auto";
+            }, 2000); // Adjust the delay time as needed
+        });
+    </script>
     <div id="root"></div>
   </body>
 </html>

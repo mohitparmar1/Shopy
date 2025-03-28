@@ -7,11 +7,11 @@
 .heading-font {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 620;
   font-style: normal;
 }
 
 .gradient {
-    background: rgb(19,28,70);
+    background: rgb(36, 60, 165);
     background: linear-gradient(0deg, rgba(19,28,70,1) 18%, rgba(0,0,0,1) 49%, rgba(0,0,0,1) 100%);
 }
